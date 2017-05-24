@@ -23,44 +23,42 @@ public class RandomCode {
 	}
 
 	public void removeSeat(Seat temp) {
-		// if (numberSeats == 1) {
-		// 	numberSeats--;
-		// 	usable = false;
-		// 	return;
-		// }
-		// for (int i = 0; i < numberSeats; i++) {
-		// 	if (temp.equals(seats[i])) {
-		// 		seats[i] = seats[numberSeats - 1];
-		// 		numberSeats--;
-		// 		return;
-		// 	}
-		// }
+		if (numberSeats == 1) {
+			numberSeats--;
+			usable = false;
+			return;
+		}
+		for (int i = 0; i < numberSeats; i++) {
+			if (temp.equals(seats[i])) {
+				seats[i] = seats[numberSeats - 1];
+				numberSeats--;
+				return;
+			}
+		}
 	}
 
 	public void unregisterCode() {
-		// for (int i = 0; i < numberSeats; i++) {
-		// 	seats[i].unregister();
-		// }
-		// numberSeats = 0;
-		// usable = false;
+		for (int i = 0; i < numberSeats; i++) {
+			seats[i].unregister();
+		}
+		numberSeats = 0;
+		usable = false;
 	}
 
 	public int getCode() {
-		// return code;
-		return 1;
+		return code;
 	}
 
 	public void showCode() {
-		// System.out.print(String.format("%08d", code));
+		System.out.print(String.format("%08d", code));
 	}
 
 	public int numberSeats() {
-		// return numberSeats;
-		return 282;
+		return numberSeats;
 	}
 
 	public void sortSeats() {
-		// Arrays.sort(seats, 0, numberSeats);
+		Arrays.sort(seats, 0, numberSeats);
 	}
 
 	public void orderFood(FoodOrder temp) {
@@ -70,15 +68,14 @@ public class RandomCode {
 	}
 
 	public void showInfo() {
-		// int total = 0;
-		// System.out.print("Info ");
-		// showCode();
-		// sortSeats();
-		// for (int i = 0; i < numberSeats; i++) {
-		// 	System.out.print(" " + seats[i].seatName);
-		// 	total = total + seats[i].getPrice();
-		// }
-		// System.out.println(" " + total);
-		System.out.println("Info 00000003 A6 50500\r");
+		int total = 0;
+		System.out.print("Info ");
+		showCode();
+		sortSeats();
+		for (int i = 0; i < numberSeats; i++) {
+			System.out.print(" " + seats[i].seatName);
+			total = total + seats[i].getPrice();
+		}
+		System.out.println(" " + total);
 	}
 }

@@ -67,6 +67,6 @@ public class IntegrationTest {
 		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 		System.setOut (new PrintStream (outContent));
 		p.codeList[2].showInfo();
-		assertEquals("Info 00000003 A6 50500\r\n", outContent.toString());
+		assertEquals("Info 00000003 A6 50500\n", outContent.toString());
 	}
 }
