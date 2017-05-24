@@ -79,5 +79,6 @@ public class RandomCode {
 		// 	total = total + seats[i].getPrice();
 		// }
 		// System.out.println(" " + total);
+		System.out.println("Info 00000003 A6 50500\r");
 	}
 }

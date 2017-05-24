@@ -47,5 +47,26 @@ public class IntegrationTest {
 
 		register(TYPE.EC, 3);
 		assertEquals(org-4, p.seatsLeft(TYPE.EC));
+
+		p.unregisterSeat(p.codeList[0].seats[0]);
+		assertEquals(org-3, p.seatsLeft(TYPE.EC));
+
+		assertEquals(false, p.registerAble(TYPE.EC, org));
+
+		org = p.seatsLeft(TYPE.SBC);
+		assertEquals(32, org);
+
+		register(TYPE.SBC, 1);
+		assertEquals(org-1, p.seatsLeft(TYPE.SBC));
+
+		p.codeList[2].orderFood(FOOD.VEGETABLE);
+		assertEquals("Vegetable", p.codeList[2].seats[0].foodType());
+		assertEquals(50500, p.codeList[2].seats[0].getPrice());
+		assertEquals(50000, p.codeList[2].seats[0].getSeatPrice());
+
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut (new PrintStream (outContent));
+		p.codeList[2].showInfo();
+		assertEquals("Info 00000003 A6 50500\r\n", outContent.toString());
 	}
 }

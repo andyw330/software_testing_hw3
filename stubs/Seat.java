@@ -65,9 +65,9 @@ public class Seat implements Comparable<Seat> {
 	}
 
 	public void unregister() {
-		// this.isRegistered = false;
-		// this.codeNumber = 0;
-		// foodType = FOOD.NONE;
+		this.isRegistered = false;
+		this.codeNumber = 0;
+		foodType = FOOD.NONE;
 	}
 
 	public int getCode() {
@@ -80,11 +80,11 @@ public class Seat implements Comparable<Seat> {
 	}
 
 	public int getPrice() {
-		return 5000 + 0;
+		return 50000 + 500;
 	}
 
 	public int getSeatPrice() {
-		return 5000;
+		return 50000;
 	}
 
 	public int compareTo(Seat tempSeat) {
@@ -102,11 +102,12 @@ public class Seat implements Comparable<Seat> {
 	}
 
 	public void showInfo() {
+		// System.out.println("Info 00000003 A6 50500");
 		// System.out.println("Info " + seatName + " " + foodType.food + " " + getPrice());
 	}
 
 	public String foodType() {
 		// return foodType.food;
-		return "Beef";
+		return "Vegetable";
 	}
 }
