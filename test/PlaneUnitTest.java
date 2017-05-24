@@ -18,6 +18,7 @@ public class PlaneUnitTest {
 	@Before
 	public void setUp() throws Exception {
 		p = new Plane();
+		System.out.println("Hello!");
 	}
 
 	@After
@@ -79,8 +80,7 @@ public class PlaneUnitTest {
 
 	@Test
 	public void insertSeatsTest_BoundaryValueTesting() {
-		p.insertSeats();
-		assertEquals("A1", p.A[1].seatName);
+		assertEquals("A11", p.A[1].seatName);
 		assertEquals("A2", p.A[2].seatName);
 		assertEquals("A8", p.A[8].seatName);
 		assertEquals("A69", p.A[69].seatName);
@@ -330,7 +330,7 @@ public class PlaneUnitTest {
 	}
 
 	@Test
-	public void removeRowDTest_DecisionTableDasedTesting() {
+	public void removeRowDTest_DecisionTableBasedTesting() {
 		p.removeRowD(27);
 		assertEquals(false, p.D[27].isAvailable());
 	}
@@ -368,7 +368,7 @@ public class PlaneUnitTest {
 	}
 
 	@Test
-	public void removeRowETest_DecisionTableDasedTesting() {
+	public void removeRowETest_DecisionTableBasedTesting() {
 		p.removeRowE(27);
 		assertEquals(false, p.E[27].isAvailable());
 	}
@@ -406,7 +406,7 @@ public class PlaneUnitTest {
 	}
 
 	@Test
-	public void removeRowFTest_DecisionTableDasedTesting() {
+	public void removeRowFTest_DecisionTableBasedTesting() {
 		p.removeRowF(27);
 		assertEquals(false, p.F[27].isAvailable());
 	}
@@ -444,7 +444,7 @@ public class PlaneUnitTest {
 	}
 
 	@Test
-	public void removeRowGTest_DecisionTableDasedTesting() {
+	public void removeRowGTest_DecisionTableBasedTesting() {
 		p.removeRowG(27);
 		assertEquals(false, p.G[27].isAvailable());
 	}
@@ -520,7 +520,7 @@ public class PlaneUnitTest {
 	}
 
 	@Test
-	public void removeRowJTest_DecisionTableJasedTesting() {
+	public void removeRowJTest_DecisionTableBasedTesting() {
 		p.removeRowJ(45);
 		assertEquals(false, p.J[45].isAvailable());
 	}

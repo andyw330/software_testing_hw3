@@ -28,3 +28,6 @@ runPlaneUnitTest:
 
 runRandomCodeUnitTest:
 	java -cp $(lib) org.junit.runner.JUnitCore test.RandomCodeUnitTest
+
+runPlanePathTest:
+	java -cp $(lib) org.junit.runner.JUnitCore test.PlanePathTest
