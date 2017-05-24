@@ -248,7 +248,6 @@ public class RandomCodeUnitTest {
 		assertEquals(Integer.MAX_VALUE / 2, r.getCode());
 	}
 
-
 	@Test
 	public void showCodeTest_BoundaryValueTesting() {
 		setUpStreams();
@@ -496,7 +495,6 @@ public class RandomCodeUnitTest {
 		r.orderFood(FOOD.NONE);
 		assertEquals("None", r.seats[191].foodType());
 	}
-
 
 	@Test
 	public void showInfoTest_BoundaryValueTesting() {
