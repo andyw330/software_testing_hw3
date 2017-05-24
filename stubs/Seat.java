@@ -19,13 +19,11 @@ public class Seat implements Comparable<Seat> {
 	public final int seatPrice;
 
 	public boolean isAvailable() {
-		// return isAvailable;
-		return true;
+		return isAvailable;
 	}
 
 	public boolean isRegistered() {
-		// return isRegistered;
-		return true;
+		return isRegistered;
 	}
 
 	public boolean isBookable() {
@@ -34,7 +32,6 @@ public class Seat implements Comparable<Seat> {
 		} else {
 			return false;
 		}
-		// return true;
 	}
 
 	public Seat() {
@@ -56,7 +53,7 @@ public class Seat implements Comparable<Seat> {
 	}
 
 	public void notAvailable() {
-		// this.isAvailable = false;
+		this.isAvailable = false;
 	}
 
 	public void register(int temp) {
@@ -71,43 +68,39 @@ public class Seat implements Comparable<Seat> {
 	}
 
 	public int getCode() {
-		// return codeNumber;
-		return 1;
+		return codeNumber;
 	}
 
 	public void orderFood(FoodOrder temp) {
-		// foodType = temp;
+		foodType = temp;
 	}
 
 	public int getPrice() {
-		return 50000 + 500;
+		return seatPrice + foodType.price;
 	}
 
 	public int getSeatPrice() {
-		return 50000;
+		return seatPrice;
 	}
 
 	public int compareTo(Seat tempSeat) {
-		// String intValue1 = this.seatName.replaceAll("[A-Z]", "");
-		// String intValue2 = tempSeat.seatName.replaceAll("[A-Z]", "");
-		// Integer temp1, temp2;
-		// temp1 = Integer.parseInt(intValue1);
-		// temp2 = Integer.parseInt(intValue2);
-		// if (!temp1.equals(temp2)) {
-		// 	return temp1.compareTo(temp2);
-		// } else {
-		// 	return this.seatName.compareTo(tempSeat.seatName);
-		// }
-		return 0;
+		String intValue1 = this.seatName.replaceAll("[A-Z]", "");
+		String intValue2 = tempSeat.seatName.replaceAll("[A-Z]", "");
+		Integer temp1, temp2;
+		temp1 = Integer.parseInt(intValue1);
+		temp2 = Integer.parseInt(intValue2);
+		if (!temp1.equals(temp2)) {
+			return temp1.compareTo(temp2);
+		} else {
+			return this.seatName.compareTo(tempSeat.seatName);
+		}
 	}
 
 	public void showInfo() {
-		// System.out.println("Info 00000003 A6 50500");
-		// System.out.println("Info " + seatName + " " + foodType.food + " " + getPrice());
+		System.out.println("Info " + seatName + " " + foodType.food + " " + getPrice());
 	}
 
 	public String foodType() {
-		// return foodType.food;
-		return "Vegetable";
+		return foodType.food;
 	}
 }

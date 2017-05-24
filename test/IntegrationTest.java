@@ -39,7 +39,7 @@ public class IntegrationTest {
 	@Test
 	public void test1() {
 		int org = p.seatsLeft(TYPE.EC);
-		assertEquals(260, org);
+		assertEquals(220, org);
 		
 		register(TYPE.EC, 1);
 		assertEquals(true, p.codeList[0].seats[0].isRegistered());

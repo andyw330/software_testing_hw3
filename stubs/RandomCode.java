@@ -64,9 +64,9 @@ public class RandomCode {
 	}
 
 	public void orderFood(FoodOrder temp) {
-		// for (int i = 0; i < numberSeats; i++) {
-		// 	seats[i].orderFood(temp);
-		// }
+		for (int i = 0; i < numberSeats; i++) {
+			seats[i].orderFood(temp);
+		}
 	}
 
 	public void showInfo() {
