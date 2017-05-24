@@ -15,10 +15,9 @@ system:
 unitTest: system
 	javac -g -cp $(lib) -d $(output) $(unitTest)
 
-
 ######################################################################
-
-run : runSeatUnitTest
+# unit testing
+runUnitTest: runSeatUnitTest runPlaneUnitTest runRandomCodeUnitTest
 
 runSeatUnitTest:
 	java -cp $(lib) org.junit.runner.JUnitCore test.SeatUnitTest
@@ -29,5 +28,9 @@ runPlaneUnitTest:
 runRandomCodeUnitTest:
 	java -cp $(lib) org.junit.runner.JUnitCore test.RandomCodeUnitTest
 
+# path testing
 runPlanePathTest:
 	java -cp $(lib) org.junit.runner.JUnitCore test.PlanePathTest
+
+runSeatPathTest:
+	java -cp $(lib) org.junit.runner.JUnitCore test.SeatPathTest
