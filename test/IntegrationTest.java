@@ -44,5 +44,8 @@ public class IntegrationTest {
 		register(TYPE.EC, 1);
 		assertEquals(true, p.codeList[0].seats[0].isRegistered());
 		assertEquals(org-1, p.seatsLeft(TYPE.EC));
+
+		register(TYPE.EC, 3);
+		assertEquals(org-4, p.seatsLeft(TYPE.EC));
 	}
 }
