@@ -37,7 +37,7 @@ public class IntegrationTest {
 	}
 
 	@Test
-	public void test1() {
+	public void integrationTest1() {
 		int org = p.seatsLeft(TYPE.EC);
 		assertEquals(220, org);
 		
@@ -71,7 +71,7 @@ public class IntegrationTest {
 	}
 
 	@Test
-	public void test2() {
+	public void integrationTest2() {
 		
 		int org;
 		org = p.seatsLeft(TYPE.EDC);  
