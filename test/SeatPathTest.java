@@ -9,9 +9,9 @@ import static org.junit.Assert.assertEquals;
 import org.junit.After;
 import org.junit.Before;
 
-import system.FOOD;
-import system.Seat;
-import system.TYPE;
+import source.FOOD;
+import source.Seat;
+import source.TYPE;
 
 public class SeatPathTest {
 

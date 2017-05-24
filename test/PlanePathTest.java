@@ -5,11 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 
-import system.Plane;
-import system.TYPE;
-import system.FOOD;
-import system.RandomCode;
-import system.Seat;
+import source.Plane;
+import source.TYPE;
+import source.FOOD;
+import source.RandomCode;
+import source.Seat;
 
 public class PlanePathTest {
 	
