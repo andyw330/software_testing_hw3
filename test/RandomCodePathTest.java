@@ -221,4 +221,132 @@ public class RandomCodePathTest {
 		r.showCode();
 		assertEquals("00000001", outContent.toString());
 	}
+
+	@Test
+	public void orderFoodTest_CodeCoverageC0() {
+		r = new RandomCode(1);
+		for (int i = 0; i < 384; ++i) {
+			r.addSeat(seats[i]);
+		}
+		r.orderFood(FOOD.BEEF);
+		assertEquals("Beef", r.seats[0].foodType());
+	}
+
+	@Test
+	public void orderFoodTest_CodeCoverageC1() {
+		r = new RandomCode(1);
+		for (int i = 0; i < 384; ++i) {
+			r.addSeat(seats[i]);
+		}
+		r.orderFood(FOOD.BEEF);
+		assertEquals("Beef", r.seats[0].foodType());
+	}
+
+	@Test
+	public void orderFoodTest_CodeCoverageC2() {
+		r = new RandomCode(1);
+		for (int i = 0; i < 384; ++i) {
+			r.addSeat(seats[i]);
+		}
+		r.orderFood(FOOD.BEEF);
+		assertEquals("Beef", r.seats[0].foodType());
+	}
+
+	@Test
+	public void orderFoodTest_CodeCoverageMCDC() {
+		r = new RandomCode(1);
+		for (int i = 0; i < 384; ++i) {
+			r.addSeat(seats[i]);
+		}
+		r.orderFood(FOOD.BEEF);
+		assertEquals("Beef", r.seats[0].foodType());
+	}
+
+	@Test
+	public void showInfoTest_CodeCoverageC0() {
+		setUpStreams();
+		r = new RandomCode(1);
+		r.addSeat(new Seat(TYPE.EC, 1, 'A'));
+		r.addSeat(new Seat(TYPE.SBC, 1, 'B'));
+		r.showInfo();
+		assertEquals("Info 00000001 A1 B1 55000\n", outContent.toString());
+	}
+
+	@Test
+	public void showInfoTest_CodeCoverageC1() {
+		setUpStreams();
+		r = new RandomCode(1);
+		r.addSeat(new Seat(TYPE.EC, 1, 'A'));
+		r.addSeat(new Seat(TYPE.SBC, 1, 'B'));
+		r.showInfo();
+		assertEquals("Info 00000001 A1 B1 55000\n", outContent.toString());
+	}
+
+	@Test
+	public void showInfoTest_CodeCoverageC2() {
+		setUpStreams();
+		r = new RandomCode(1);
+		r.addSeat(new Seat(TYPE.EC, 1, 'A'));
+		r.addSeat(new Seat(TYPE.SBC, 1, 'B'));
+		r.showInfo();
+		assertEquals("Info 00000001 A1 B1 55000\n", outContent.toString());
+	}
+
+	@Test
+	public void showInfoTest_CodeCoverageMCDC() {
+		setUpStreams();
+		r = new RandomCode(1);
+		r.addSeat(new Seat(TYPE.EC, 1, 'A'));
+		r.addSeat(new Seat(TYPE.SBC, 1, 'B'));
+		r.showInfo();
+		assertEquals("Info 00000001 A1 B1 55000\n", outContent.toString());
+	}
+
+	@Test
+	public void sortSeatsTest_CodeCoverageC0() {
+		r = new RandomCode(1);
+		seats[0] = new Seat(TYPE.EC, 1, 'B');
+		seats[1] = new Seat(TYPE.SBC, 1, 'A');
+		r.addSeat(seats[0]);
+		r.addSeat(seats[1]);
+		r.sortSeats();
+		assertEquals(true, r.seats[0].equals(this.seats[1]));
+		assertEquals(true, r.seats[1].equals(this.seats[0]));
+	}
+
+	@Test
+	public void sortSeatsTest_CodeCoverageC1() {
+		r = new RandomCode(1);
+		seats[0] = new Seat(TYPE.EC, 1, 'B');
+		seats[1] = new Seat(TYPE.SBC, 1, 'A');
+		r.addSeat(seats[0]);
+		r.addSeat(seats[1]);
+		r.sortSeats();
+		assertEquals(true, r.seats[0].equals(this.seats[1]));
+		assertEquals(true, r.seats[1].equals(this.seats[0]));
+	}
+
+	@Test
+	public void sortSeatsTest_CodeCoverageC2() {
+		r = new RandomCode(1);
+		seats[0] = new Seat(TYPE.EC, 1, 'B');
+		seats[1] = new Seat(TYPE.SBC, 1, 'A');
+		r.addSeat(seats[0]);
+		r.addSeat(seats[1]);
+		r.sortSeats();
+		assertEquals(true, r.seats[0].equals(this.seats[1]));
+		assertEquals(true, r.seats[1].equals(this.seats[0]));
+	}
+
+	@Test
+	public void sortSeatsTest_CodeCoverageMCDC() {
+		r = new RandomCode(1);
+		seats[0] = new Seat(TYPE.EC, 1, 'B');
+		seats[1] = new Seat(TYPE.SBC, 1, 'A');
+		r.addSeat(seats[0]);
+		r.addSeat(seats[1]);
+		r.sortSeats();
+		assertEquals(true, r.seats[0].equals(this.seats[1]));
+		assertEquals(true, r.seats[1].equals(this.seats[0]));
+	}
 }

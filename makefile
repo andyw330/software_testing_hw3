@@ -34,3 +34,6 @@ runPlanePathTest:
 
 runSeatPathTest:
 	java -cp $(lib) org.junit.runner.JUnitCore test.SeatPathTest
+
+runRandomCodePathTest:
+	java -cp $(lib) org.junit.runner.JUnitCore test.RandomCodePathTest
