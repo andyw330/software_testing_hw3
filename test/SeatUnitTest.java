@@ -286,7 +286,7 @@ public class SeatUnitTest {
 	@Test
 	public void showInfoTest_BoundaryValueTesting() {
 		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-		s.setOut (new PrintStream (outContent));
+		System.setOut (new PrintStream (outContent));
 		s1.showInfo();
 
 		assertEquals("Info A1 None 5000\n", outContent.toString());

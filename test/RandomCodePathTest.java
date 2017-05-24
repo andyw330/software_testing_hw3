@@ -14,7 +14,7 @@ import source.RandomCode;
 import source.Seat;
 import source.TYPE;
 
-public class RandomCodeUnitTest {
+public class RandomCodePathTest {
 
 	RandomCode r;
 	Seat[] seats;
@@ -69,7 +69,7 @@ public class RandomCodeUnitTest {
 	@Test
 	public void addSeatTest_CodeCoverageMCDC() {
 		for (int i = 0; i < 192; ++i) {
-			r.addkSeat(seats[i]);
+			r.addSeat(seats[i]);
 		}
 		assertEquals(192, r.numberSeats());
 	}
