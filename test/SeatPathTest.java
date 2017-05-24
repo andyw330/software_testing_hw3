@@ -104,27 +104,27 @@ public class SeatPathTest {
 	}
 
 	@Test
-	public void isAvailableTest_CodeCoveragC0() {
+	public void isAvailableTest_CodeCoverageC0() {
 		assertEquals(true, s1.isAvailable());
 	}
 
 	@Test
-	public void isAvailableTest_CodeCoveragC1() {
+	public void isAvailableTest_CodeCoverageC1() {
 		assertEquals(true, s1.isAvailable());
 	}
 
 	@Test
-	public void isAvailableTest_CodeCoveragC2() {
+	public void isAvailableTest_CodeCoverageC2() {
 		assertEquals(true, s1.isAvailable());
 	}
 
 	@Test
-	public void isAvailableTest_CodeCoveragMCDC() {
+	public void isAvailableTest_CodeCoverageMCDC() {
 		assertEquals(true, s1.isAvailable());
 	}
 
 	@Test
-	public void isBookableTest_CodeCoveragC0() {
+	public void isBookableTest_CodeCoverageC0() {
 		assertEquals(true, s1.isBookable());
 
 		s1.register(1);
@@ -133,7 +133,7 @@ public class SeatPathTest {
 	}
 
 	@Test
-	public void isBookableTest_CodeCoveragC1() {
+	public void isBookableTest_CodeCoverageC1() {
 		assertEquals(true, s1.isBookable());
 
 		s1.register(1);
@@ -142,7 +142,7 @@ public class SeatPathTest {
 	}
 
 	@Test
-	public void isBookableTest_CodeCoveragC2() {
+	public void isBookableTest_CodeCoverageC2() {
 		assertEquals(true, s1.isBookable());
 
 		s1.register(1);
@@ -151,7 +151,7 @@ public class SeatPathTest {
 	}
 
 	@Test
-	public void isBookableTest_CodeCoveragMCDC() {
+	public void isBookableTest_CodeCoverageMCDC() {
 		assertEquals(true, s1.isBookable());
 
 		s1.register(1);
@@ -160,7 +160,7 @@ public class SeatPathTest {
 	}
 
 	@Test
-	public void showInfoTest_CodeCoveragC0() {
+	public void showInfoTest_CodeCoverageC0() {
 		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 		System.setOut (new PrintStream (outContent));
 		s1.showInfo();
@@ -169,7 +169,7 @@ public class SeatPathTest {
 	}
 
 	@Test
-	public void showInfoTest_CodeCoveragC1() {
+	public void showInfoTest_CodeCoverageC1() {
 		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 		System.setOut (new PrintStream (outContent));
 		s1.showInfo();
@@ -178,7 +178,7 @@ public class SeatPathTest {
 	}
 
 	@Test
-	public void showInfoTest_CodeCoveragC2() {
+	public void showInfoTest_CodeCoverageC2() {
 		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 		System.setOut (new PrintStream (outContent));
 		s1.showInfo();
@@ -187,7 +187,7 @@ public class SeatPathTest {
 	}
 
 	@Test
-	public void showInfoTest_CodeCoveragMCDC() {
+	public void showInfoTest_CodeCoverageMCDC() {
 		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 		System.setOut (new PrintStream (outContent));
 		s1.showInfo();
@@ -196,49 +196,49 @@ public class SeatPathTest {
 	}
 
 	@Test
-	public void notAvailableTest_CodeCoveragC0() {
+	public void notAvailableTest_CodeCoverageC0() {
 		s1.notAvailable();
 		assertEquals(false, s1.isAvailable());
 	}
 
 	@Test
-	public void notAvailableTest_CodeCoveragC1() {
+	public void notAvailableTest_CodeCoverageC1() {
 		s1.notAvailable();
 		assertEquals(false, s1.isAvailable());
 	}
 
 	@Test
-	public void notAvailableTest_CodeCoveragC2() {
+	public void notAvailableTest_CodeCoverageC2() {
 		s1.notAvailable();
 		assertEquals(false, s1.isAvailable());
 	}
 
 	@Test
-	public void notAvailableTest_CodeCoveragMCDC() {
+	public void notAvailableTest_CodeCoverageMCDC() {
 		s1.notAvailable();
 		assertEquals(false, s1.isAvailable());
 	}
 
 	@Test
-	public void unregisterTest_CodeCoveragC0() {
+	public void unregisterTest_CodeCoverageC0() {
 		s1.unregister();
 		assertEquals(false, s1.isRegistered());
 	}
 
 	@Test
-	public void unregisterTest_CodeCoveragC1() {
+	public void unregisterTest_CodeCoverageC1() {
 		s1.unregister();
 		assertEquals(false, s1.isRegistered());
 	}
 
 	@Test
-	public void unregisterTest_CodeCoveragC2() {
+	public void unregisterTest_CodeCoverageC2() {
 		s1.unregister();
 		assertEquals(false, s1.isRegistered());
 	}
 
 	@Test
-	public void unregisterTest_CodeCoveragMCDC() {
+	public void unregisterTest_CodeCoverageMCDC() {
 		s1.unregister();
 		assertEquals(false, s1.isRegistered());
 	}
