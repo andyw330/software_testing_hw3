@@ -9,10 +9,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import system.FOOD;
-import system.RandomCode;
-import system.Seat;
-import system.TYPE;
+import source.FOOD;
+import source.RandomCode;
+import source.Seat;
+import source.TYPE;
 
 public class RandomCodeUnitTest {
 

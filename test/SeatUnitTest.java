@@ -9,9 +9,9 @@ import static org.junit.Assert.assertEquals;
 import org.junit.After;
 import org.junit.Before;
 
-import system.FOOD;
-import system.Seat;
-import system.TYPE;
+import source.FOOD;
+import source.Seat;
+import source.TYPE;
 
 public class SeatUnitTest {
 
@@ -286,7 +286,7 @@ public class SeatUnitTest {
 	@Test
 	public void showInfoTest_BoundaryValueTesting() {
 		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-		System.setOut (new PrintStream (outContent));
+		s.setOut (new PrintStream (outContent));
 		s1.showInfo();
 
 		assertEquals("Info A1 None 5000\n", outContent.toString());
