@@ -69,4 +69,38 @@ public class IntegrationTest {
 		p.codeList[2].showInfo();
 		assertEquals("Info 00000003 A6 50500\n", outContent.toString());
 	}
+
+	@Test
+	public void test2() {
+		
+		int org;
+		org = p.seatsLeft(TYPE.EDC);  
+		register(TYPE.EDC, 3);
+		assertEquals(true, p.codeList[0].seats[0].isRegistered());
+		assertEquals(org-3, p.seatsLeft(TYPE.EDC));
+		
+		register(TYPE.EDC, 3);
+		assertEquals(org-6, p.seatsLeft(TYPE.EDC));
+		
+		p.unregisterSeat(p.codeList[0].seats[0]);
+		assertEquals(org-5, p.seatsLeft(TYPE.EDC));
+		
+		assertEquals(false, p.registerAble(TYPE.EDC, org));
+		
+		org = p.seatsLeft(TYPE.SFC);
+		register(TYPE.SFC, 1);
+		assertEquals(org-1, p.seatsLeft(TYPE.SFC));
+		
+		p.codeList[2].orderFood(FOOD.PORK);
+		assertEquals("Pork", p.codeList[2].seats[0].foodType());
+		
+		assertEquals(101000, p.codeList[2].seats[0].getPrice());
+		
+		assertEquals(100000, p.codeList[2].seats[0].getSeatPrice());
+		
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut (new PrintStream (outContent));
+		p.codeList[2].showInfo();
+		assertEquals("Info 00000003 A1 101000\n", outContent.toString());
+	}
 }
