@@ -38,18 +38,23 @@ public class IntegrationTest {
 
 	@Test
 	public void integrationTest1() {
+		int all_org = p.seatsLeft();
 		int org = p.seatsLeft(TYPE.EC);
 		assertEquals(220, org);
+		assertEquals(384, all_org);
 		
 		register(TYPE.EC, 1);
 		assertEquals(true, p.codeList[0].seats[0].isRegistered());
 		assertEquals(org-1, p.seatsLeft(TYPE.EC));
+		assertEquals(all_org-1, p.seatsLeft());
 
 		register(TYPE.EC, 3);
 		assertEquals(org-4, p.seatsLeft(TYPE.EC));
+		assertEquals(all_org-4, p.seatsLeft());
 
 		p.unregisterSeat(p.codeList[0].seats[0]);
 		assertEquals(org-3, p.seatsLeft(TYPE.EC));
+		assertEquals(all_org-3, p.seatsLeft());
 
 		assertEquals(false, p.registerAble(TYPE.EC, org));
 
