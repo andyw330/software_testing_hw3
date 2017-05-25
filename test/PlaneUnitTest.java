@@ -12,7 +12,7 @@ import source.RandomCode;
 import source.Seat;
 
 public class PlaneUnitTest {
-	
+
 	Plane p;
 
 	@Before
@@ -52,7 +52,7 @@ public class PlaneUnitTest {
 		assertEquals(true, p.foodList[0].equals(FOOD.NONE));
 		assertEquals(true, p.typeList[0].equals(TYPE.EC));
 	}
-	
+
 	@Test
 	public void bootTest_EdgeValueTesting() {
 		assertEquals(true, p.seatList[0].equals(p.A));
@@ -80,7 +80,7 @@ public class PlaneUnitTest {
 
 	@Test
 	public void insertSeatsTest_BoundaryValueTesting() {
-		assertEquals("A11", p.A[1].seatName);
+		assertEquals("A1", p.A[1].seatName);
 		assertEquals("A2", p.A[2].seatName);
 		assertEquals("A8", p.A[8].seatName);
 		assertEquals("A69", p.A[69].seatName);
@@ -148,7 +148,7 @@ public class PlaneUnitTest {
 		assertEquals("A27", p.A[27].seatName);
 		assertEquals("A45", p.A[45].seatName);
 	}
-	
+
 	@Test
 	public void insertSeatsTest_EdgeValueTesting() {
 		// SFC
@@ -202,7 +202,7 @@ public class PlaneUnitTest {
 		p.removeRowA(1);
 		assertEquals(false, p.A[1].isAvailable());
 	}
-	
+
 	@Test
 	public void removeRowATest_EdgeValueTesting() {
 		p.removeRowA(1);
@@ -240,7 +240,7 @@ public class PlaneUnitTest {
 		p.removeRowB(45);
 		assertEquals(false, p.B[45].isAvailable());
 	}
-	
+
 	@Test
 	public void removeRowBTest_EdgeValueTesting() {
 		p.removeRowB(45);
@@ -278,7 +278,7 @@ public class PlaneUnitTest {
 		p.removeRowC(1);
 		assertEquals(false, p.C[1].isAvailable());
 	}
-	
+
 	@Test
 	public void removeRowCTest_EdgeValueTesting() {
 		p.removeRowC(1);
@@ -316,7 +316,7 @@ public class PlaneUnitTest {
 		p.removeRowD(27);
 		assertEquals(false, p.D[27].isAvailable());
 	}
-	
+
 	@Test
 	public void removeRowDTest_EdgeValueTesting() {
 		p.removeRowD(27);
@@ -354,7 +354,7 @@ public class PlaneUnitTest {
 		p.removeRowE(27);
 		assertEquals(false, p.E[27].isAvailable());
 	}
-	
+
 	@Test
 	public void removeRowETest_EdgeValueTesting() {
 		p.removeRowE(27);
@@ -392,7 +392,7 @@ public class PlaneUnitTest {
 		p.removeRowF(27);
 		assertEquals(false, p.F[27].isAvailable());
 	}
-	
+
 	@Test
 	public void removeRowFTest_EdgeValueTesting() {
 		p.removeRowF(27);
@@ -430,7 +430,7 @@ public class PlaneUnitTest {
 		p.removeRowG(27);
 		assertEquals(false, p.G[27].isAvailable());
 	}
-	
+
 	@Test
 	public void removeRowGTest_EdgeValueTesting() {
 		p.removeRowG(27);
@@ -468,7 +468,7 @@ public class PlaneUnitTest {
 		p.removeRowH(1);
 		assertEquals(false, p.H[1].isAvailable());
 	}
-	
+
 	@Test
 	public void removeRowHTest_EdgeValueTesting() {
 		p.removeRowH(1);
@@ -506,7 +506,7 @@ public class PlaneUnitTest {
 		p.removeRowJ(45);
 		assertEquals(false, p.J[45].isAvailable());
 	}
-	
+
 	@Test
 	public void removeRowJTest_EdgeValueTesting() {
 		p.removeRowJ(45);
@@ -544,7 +544,7 @@ public class PlaneUnitTest {
 		p.removeRowK(1);
 		assertEquals(false, p.K[1].isAvailable());
 	}
-	
+
 	@Test
 	public void removeRowKTest_EdgeValueTesting() {
 		p.removeRowK(1);
@@ -572,7 +572,7 @@ public class PlaneUnitTest {
 	public void seatsLeftTest_EquivalenceTesting() {
 		assertEquals(384, p.seatsLeft());
 	}
-	
+
 	@Test
 	public void seatsLeftTest_EdgeValueTesting() {
 		assertEquals(384, p.seatsLeft());
@@ -582,7 +582,7 @@ public class PlaneUnitTest {
 	public void seatsLeftTest_DecisionTableBasedTesting() {
 		assertEquals(384, p.seatsLeft());
 	}
-	
+
 	@Test
 	public void seatsLeftTest2_BoundaryValueTesting() {
 		assertEquals(220, p.seatsLeft(TYPE.EC));
@@ -595,7 +595,7 @@ public class PlaneUnitTest {
 		assertEquals(32, p.seatsLeft(TYPE.SBC));
 		assertEquals(12, p.seatsLeft(TYPE.SFC));
 	}
-	
+
 	@Test
 	public void seatsLeftTest2_EdgeValueTesting() {
 		assertEquals(220, p.seatsLeft(TYPE.EC));
@@ -628,24 +628,24 @@ public class PlaneUnitTest {
 		assertEquals(true, p.registerAble(TYPE.EDC, 5));
 		assertEquals(true, p.registerAble(TYPE.EC, 31));
 	}
-	
+
 	@Test
 	public void registerableTest_EdgeValueTesting() {
 		assertEquals(true, p.registerAble(TYPE.SFC, 1));
 		assertEquals(true, p.registerAble(TYPE.SFC, 2));
 		assertEquals(true, p.registerAble(TYPE.SFC, 11));
 		assertEquals(true, p.registerAble(TYPE.SFC, 12));
-		
+
 		assertEquals(true, p.registerAble(TYPE.SBC, 1));
 		assertEquals(true, p.registerAble(TYPE.SBC, 2));
 		assertEquals(true, p.registerAble(TYPE.SBC, 31));
 		assertEquals(true, p.registerAble(TYPE.SBC, 32));
-			
+
 		assertEquals(true, p.registerAble(TYPE.EDC, 1));
 		assertEquals(true, p.registerAble(TYPE.EDC, 2));
 		assertEquals(true, p.registerAble(TYPE.EDC, 119));
 		assertEquals(true, p.registerAble(TYPE.EDC, 120));
-		
+
 		assertEquals(true, p.registerAble(TYPE.EC, 1));
 		assertEquals(true, p.registerAble(TYPE.EC, 2));
 		assertEquals(true, p.registerAble(TYPE.EC, 219));
@@ -662,47 +662,47 @@ public class PlaneUnitTest {
 
 	@Test
 	public void registerTypeTest_BoundaryValueTesting() {
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EC, 1);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EC, 2);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EC, 3);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EC));
-		p.numberCode++;	
+		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EC, 219);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EC));
-		p.numberCode++;	
+		p.numberCode++;
 
 		// p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
 		// p.registerType(TYPE.EC, 220);
 		// assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EC));
 		// p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EDC, 1);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EDC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EDC, 2);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EDC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EDC, 3);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EDC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EDC, 119);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EDC));
 		p.numberCode++;
@@ -712,22 +712,22 @@ public class PlaneUnitTest {
 		// assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EDC));
 		// p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.SBC, 1);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.SBC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.SBC, 2);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.SBC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.SBC, 3);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.SBC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.SBC, 31);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.SBC));
 		p.numberCode++;
@@ -737,22 +737,22 @@ public class PlaneUnitTest {
 		// assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.SBC));
 		// p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.SFC, 1);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.SFC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.SFC, 2);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.SFC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.SFC, 3);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.SFC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.SFC, 11);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.SFC));
 		p.numberCode++;
@@ -765,41 +765,41 @@ public class PlaneUnitTest {
 
 	@Test
 	public void registerTypeTest_EquivalenceTesting() {
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EC, 2);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.SFC, 12);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.SFC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.SBC, 3);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.SBC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EDC, 1);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EDC));
 		p.numberCode++;
 
 	}
-	
+
 	@Test
 	public void registerTypeTest_EdgeValueTesting() {
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EC, 1);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EC, 2);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EC, 219);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EC));
 		p.numberCode++;
@@ -809,17 +809,17 @@ public class PlaneUnitTest {
 		// assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EC));
 		// p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EDC, 1);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EDC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EDC, 2);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EDC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EDC, 119);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EDC));
 		p.numberCode++;
@@ -829,17 +829,17 @@ public class PlaneUnitTest {
 		// assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EDC));
 		// p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.SBC, 1);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.SBC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.SBC, 2);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.SBC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.SBC, 31);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.SBC));
 		p.numberCode++;
@@ -849,17 +849,17 @@ public class PlaneUnitTest {
 		// assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.SBC));
 		// p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.SFC, 1);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.SFC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.SFC, 2);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.SFC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.SFC, 11);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.SFC));
 		p.numberCode++;
@@ -872,22 +872,22 @@ public class PlaneUnitTest {
 
 	@Test
 	public void registerTypeTest_DecisionTableBasedTesting() {
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EC, 2);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.SFC, 11);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.SFC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.SBC, 3);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.SBC));
 		p.numberCode++;
 
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EDC, 1);
 		assertEquals(true, p.codeList[p.numberCode].seats[0].seatType.equals(TYPE.EDC));
 		p.numberCode++;
@@ -895,7 +895,7 @@ public class PlaneUnitTest {
 
 	@Test
 	public void unregisterSeatTest_BoundaryValueTesting() {
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EC, 1);
 		Seat s = p.codeList[p.numberCode].seats[0];
 		p.unregisterSeat(s);
@@ -904,16 +904,16 @@ public class PlaneUnitTest {
 
 	@Test
 	public void unregisterSeatTest_EquivalenceTesting() {
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EC, 1);
 		Seat s = p.codeList[p.numberCode].seats[0];
 		p.unregisterSeat(s);
 		assertEquals(false, p.codeList[0].usable);
 	}
-	
+
 	@Test
 	public void unregisterSeatTest_EdgeValueTesting() {
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EC, 1);
 		Seat s = p.codeList[p.numberCode].seats[0];
 		p.unregisterSeat(s);
@@ -922,7 +922,7 @@ public class PlaneUnitTest {
 
 	@Test
 	public void unregisterSeatTest_DecisionTableBasedTesting() {
-		p.codeList[p.numberCode] = new RandomCode(p.numberCode+1);
+		p.codeList[p.numberCode] = new RandomCode(p.numberCode + 1);
 		p.registerType(TYPE.EC, 1);
 		Seat s = p.codeList[p.numberCode].seats[0];
 		p.unregisterSeat(s);
